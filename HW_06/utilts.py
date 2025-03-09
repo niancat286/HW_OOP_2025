@@ -49,7 +49,7 @@ class Trapeze:
         if a <= 0 or b <= 0 or c <= 0 or d <= 0:
             return False
 
-        if (a + b > c + d) and (a + c > b + d) and (a + d > b + c) and (b + c > a + d):
+        if (c + d > abs(a - b)) and (c + abs(a - b) > d) and (d + abs(a - b) > c):
             return True
 
         return False

@@ -1,0 +1,14 @@
+input01.txt:
+figure with max perimeter 131.947 is Circle 21,  perimetr = 131.94689145077132, square = 1385.4423602330987
+figure with max square 1385.442 is Circle 21,  perimetr = 131.94689145077132, square = 1385.4423602330987
+
+
+input02.txt
+figure with max perimeter 157.080 is Circle 25,  perimetr = 157.07963267948966, square = 1963.4954084936207
+figure with max square 1963.495 is Circle 25,  perimetr = 157.07963267948966, square = 1963.4954084936207
+
+
+input03.txt
+figure with max perimeter 157.080 is Circle 25,  perimetr = 157.07963267948966, square = 1963.4954084936207
+figure with max square 1963.495 is Circle 25,  perimetr = 157.07963267948966, square = 1963.4954084936207
+
