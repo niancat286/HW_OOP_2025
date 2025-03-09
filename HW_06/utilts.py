@@ -50,6 +50,23 @@ class Trapeze:
         return 0.5 * (self._a + self._b) * h
 
 
+class Parallelogram:
+    def __init__(self, a, b, h):
+        self._a = a
+        self._b = b
+        self._h = h
+
+    def get_perimeter(self):
+        return (self._a + self._b) * 2
+
+    def get_square(self):
+        return max(self._a * self._h, self._b * self._h)
+
+
+
+
+
+
 if __name__ == '__main__':
     t1 = Triangle(4,9,11)
     print(t1.get_perimeter())
@@ -62,3 +79,7 @@ if __name__ == '__main__':
     trap1 = Trapeze(10, 6, 5, 7)
     print(trap1.get_perimeter())
     print(trap1.get_square())
+
+    par1 = Parallelogram(8, 6, 4)
+    print(par1.get_perimeter())
+    print(par1.get_square())
