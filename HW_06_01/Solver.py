@@ -38,5 +38,6 @@ if __name__ == '__main__':
     print(A)
     print("=== b ====")
     print(b)
+    print("=== x ====")
     x = s.solve()
     print(x)

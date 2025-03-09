@@ -3,8 +3,11 @@ from Vector2D import Vector2D
 
 class Matrix2D:
     def __init__(self, *a):
-        if len(a) == 1:  # один параметр, але може в ньому бути або масив або інша матриця
-            pass
+        if len(a) == 1:  # матриця, що складається лише з одного елементу на всіх позиціях
+            self.a11 = a
+            self.a12 = a
+            self.a21 = a
+            self.a22 = a
         elif len(a) == 4:  # вхідний параметр - 4 числа, перші два - перший рядок, 3, 4 - другий рядок.
             self.a11, self.a12, self.a21, self.a22 = a
 
