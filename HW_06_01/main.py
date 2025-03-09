@@ -26,7 +26,17 @@ def results(file_path, matrix_arr, vector_arr):
             print(res.solve(), file = f)
 
 
+def read_solve_from_keyboard():
+    matrix = Matrix2D(*list(map(int, input().split())))
+    vector = Vector2D(*list(map(int, input().split())))
+    result = Solver(matrix, vector)
+    x = result.solve()
+    print(x)
+
+# read_solve_from_keyboard()
+
 matrix_arr = read_Matrix('matrix_coefficients.txt')
 vector_arr = read_Vector('rhs_values.txt')
 
 results('output.txt', matrix_arr, vector_arr)
+
