@@ -1,21 +1,12 @@
-AVAILABLE_FIGURES_2D = ['Triangle', 'Rectangle', 'Trapeze',
-                        'Parallelogram', 'Circle']
+from Figure import Figure
 
-AVAILABLE_FIGURES_3D = ['Ball', 'TriangularPyramid', 'QuadrangularPyramid',
-                        'RectangularParallelepiped', 'Cone', 'TriangularPrism']
 
-class Figure:
-    def __init__(self):
-        pass
-
-    def dimention(self):    #повертає вимірність фігури
-        pass
-
+class Figure3D(Figure):
     def perimetr(self):     #повертає периметр фігури для дво-вимірних фігур
-        pass
+        return None
 
     def square(self):   #повертає площу фігури для дво-вимірних фігур
-        pass
+        return None
 
     def squareSurface(self):    #повертає площу бічної фігури для три-вимірних фігур
         pass
@@ -28,4 +19,3 @@ class Figure:
 
     def volume(self):   #що обчислює міру фігури (для плоскої фігури – площу, для об’ємної – відповідно об’єм)
         pass
-
