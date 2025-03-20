@@ -9,13 +9,6 @@ class Ball(Figure):
 
         self._r = r
 
-
-    def perimetr(self):
-        return None
-
-    def square(self):
-        return None
-
     def squareSurface(self):
         return 4 * math.pi * self._r ** 2
 
