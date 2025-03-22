@@ -1,11 +1,11 @@
 import math
 
-from Triangle import Triangle
+from Circle import Circle
 
 
-class TriangularPrism(Triangle):
-    def __init__(self, a, b, c, h):
-        super().__init__(a, b, c)
+class Cone(Circle):
+    def __init__(self, r, h):
+        super().__init__(r)
         self._h = h
 
     def dimension(self):
@@ -18,24 +18,25 @@ class TriangularPrism(Triangle):
         return None
 
     def squareSurface(self):
-        return super().perimetr() * self._h
+        L = super().perimetr()
+        l = (self._r ** 2 + self._h ** 2) ** 0.5
+        return L * l / 2
 
     def squareBase(self):
-        sq = super().square()
-        return sq
+        return super().square()
 
     def height(self):
         return self._h
 
     def volume(self):
-        return self.squareBase() * self._h
+        return 1 / 3 * self.squareBase() * self._h
 
     def __str__(self):
-        return f"TriangularPrism {self._a}, {self._b}, {self._c}, {self._h}, volume = {self.volume()}"
+        return f"Cone {self._r},  volume = {self.volume()}"
 
 
 if __name__ == '__main__':
-    t = TriangularPrism(3,4,5, 3)
+    t = Cone(10, 3)
     print(t.dimension(),
           t.perimetr(),
           t.square(),

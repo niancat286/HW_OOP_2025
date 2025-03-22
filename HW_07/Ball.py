@@ -1,13 +1,18 @@
 import math
-from Figure import Figure
+from Circle import Circle
 
-class Ball(Figure):
+class Ball(Circle):
     def __init__(self, r):
-        super().__init__()
-        if r <= 0:
-            raise ValueError("Circle doesn't exist")
+        super().__init__(r)
 
-        self._r = r
+    def dimension(self):
+        return 3
+
+    def perimetr(self):
+        return None
+
+    def square(self):
+        return None
 
     def squareSurface(self):
         return 4 * math.pi * self._r ** 2
@@ -26,6 +31,11 @@ class Ball(Figure):
 
 
 if __name__ == '__main__':
-    b = Ball(10)
-    print(b.squareSurface())
-    print(b)
+    t = Ball(10)
+    print(t.dimension(),
+          t.perimetr(),
+          t.square(),
+          t.squareBase(),
+          t.squareSurface(),
+          t.height())
+    print(t)
