@@ -1,9 +1,3 @@
-AVAILABLE_FIGURES_2D = ['Triangle', 'Rectangle', 'Trapeze',
-                        'Parallelogram', 'Circle']
-
-AVAILABLE_FIGURES_3D = ['Ball', 'TriangularPyramid', 'QuadrangularPyramid',
-                        'RectangularParallelepiped', 'Cone', 'TriangularPrism']
-
 class Figure:
     def __init__(self):
         pass
