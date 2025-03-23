@@ -1,19 +1,27 @@
-from Figure2D import Figure2D
+from Figure import Figure
 
 
-class Rectangle(Figure2D):
+class Rectangle(Figure):
     def __init__(self, a, b):
-        super().__init__()
         if a <= 0 or b <= 0:
             raise ValueError("Rectangle doesn't exist")
 
         self._a = a
         self._b = b
 
+    def dimension(self):
+        return 2
+
     def perimetr(self):
+        return self.__perimetr()
+
+    def __perimetr(self):
         return (self._a + self._b) * 2
 
     def square(self):
+        return self.__square()
+
+    def __square(self):
         return self._a * self._b
 
     def volume(self):
@@ -24,5 +32,11 @@ class Rectangle(Figure2D):
 
 
 if __name__ == '__main__':
-    r = Rectangle(2,4)
-    print(r)
+    t = Rectangle(2,4)
+    print(t.dimension(),
+          t.perimetr(),
+          t.square(),
+          t.squareBase(),
+          t.squareSurface(),
+          t.height())
+    print(t)

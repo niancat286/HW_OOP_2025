@@ -1,9 +1,9 @@
 import math
 
-from Figure2D import Figure2D
+from Figure import Figure
 
 
-class Trapeze(Figure2D):
+class Trapeze(Figure):
 
     def check_existance(self, a, b, c, d):
         if a <= 0 or b <= 0 or c <= 0 or d <= 0:
@@ -15,7 +15,6 @@ class Trapeze(Figure2D):
         return False
 
     def __init__(self, a, b, c, d):
-        super().__init__()
         if not self.check_existance(a, b, c, d):
             raise ValueError("Trapeze doesn't exist")
 
@@ -23,6 +22,9 @@ class Trapeze(Figure2D):
         self._b = b
         self._c = c
         self._d = d
+
+    def dimension(self):
+        return 2
 
     def perimetr(self):
         return self._a + self._b + self._c + self._d
@@ -41,9 +43,15 @@ class Trapeze(Figure2D):
         return self.square()
 
     def __str__(self):
-        return f"Trapeze {self._a}, {self._b}, {self._c},  {self._d}, volume = {self.volume()}"
+        return f"Trapeze {self._a}, {self._b}, {self._c}, {self._d}, volume = {self.volume()}"
 
 
 if __name__ == '__main__':
-    tr = Trapeze(10, 6, 5, 7)
-    print(tr)
+    t = Trapeze(10, 6, 5,7)
+    print(t.dimension(),
+          t.perimetr(),
+          t.square(),
+          t.squareBase(),
+          t.squareSurface(),
+          t.height())
+    print(t)
