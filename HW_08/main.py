@@ -51,13 +51,10 @@ def parse_expression(expr):
 
 
 
-
-
-
 with open("input01.txt", "r") as file:
     for line in file:
         try:
             res = parse_expression(line)
             print(f"Результат: {res} = {res():.3f}")
-        except Exception as e:
+        except TypeError as e:
             print(f"Помилка у рядку: {line.strip()} -> {e}")

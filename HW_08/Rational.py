@@ -7,7 +7,7 @@ class Rational:
             if isinstance(n, str):
                 n, d = map(int, n.strip().split('/'))
             else:
-                raise TypeError("Неправильний тип ініціалізації")
+                d = 1
         if d == 0:
             raise ZeroDivisionError("Знаменник не може дорівнювати нулю")
         self.n = n
