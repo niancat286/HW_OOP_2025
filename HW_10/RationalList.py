@@ -1,12 +1,28 @@
 from Rational import Rational
 
 
+class RationalListIterator:
+    def __init__(self, data):
+        self._sorted_data = sorted(data, key=lambda el: (-el.d, -el.n))
+        self._index = 0
+
+    def __next__(self):
+        if self._index >= len(self._sorted_data):
+            raise StopIteration
+        value = self._sorted_data[self._index]
+        self._index += 1
+        return value
+
+
 class RationalList:
     def __init__(self, iterable=None):
         self._data = []
         if iterable:
             for item in iterable:
                 self.append(item)
+
+    def __iter__(self):
+        return RationalListIterator(self._data)
 
     def append(self, value):
         if isinstance(value, Rational):
@@ -56,3 +72,17 @@ class RationalList:
         for r in self._data:
             result += r
         return result
+
+
+if __name__ == '__main__':
+    lst = RationalList([
+        Rational(3, 4),
+        Rational(1, 2),
+        Rational(-5, 2),
+        Rational(2, 4),
+        Rational(7, 1),
+        Rational(1, 7)
+    ])
+
+    for r in lst:
+        print(r)
