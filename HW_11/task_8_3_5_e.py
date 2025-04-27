@@ -6,20 +6,32 @@
 
 import math
 
+
+def gen(x):
+    n = 1
+    while True:
+        yield x**n / n
+        n += 2
+
+
+def approx_res(x, eps):
+    g = gen(x)
+    S = 0
+    temp = next(g)
+    counter = 1
+
+    while abs(temp) >= eps:
+        S += temp
+        temp = next(g)
+        counter += 1
+
+    return 2 * S, counter
+
+
 x = 0.5
-eps = 0.001
+eps = 0.0000001
 
-S = 0
-a = x
-n = 1
-
-while abs(a) >= eps:
-    S += a
-    n += 2
-    a = x**n / n
-
-
-res = 2 * S
+res, n = approx_res(x, eps)
 res_math = math.log((1 + x) / (1 - x))
 
 print(f"{res = }, {n=}")
