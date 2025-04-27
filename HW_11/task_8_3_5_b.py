@@ -6,13 +6,13 @@
 
 
 def gen(N):
-    Pn = 2 # повернення 1-го члена
+    Pn = 2
     yield Pn
 
     for k in range(2, N + 1):
         xk = 1 + 1/(k**2)
         Pn *= xk
-        yield Pn    #повернення k-го члена
+        yield Pn
 
 
 if __name__ == '__main__':
