@@ -28,8 +28,9 @@ def approx_res(x, eps):
     return 2 * S, counter
 
 
-x = 0.5
-eps = 0.0000001
+x = float(input("x= "))
+eps = float(input("eps= "))
+
 
 res, n = approx_res(x, eps)
 res_math = math.log((1 + x) / (1 - x))
