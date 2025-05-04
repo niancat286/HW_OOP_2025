@@ -95,14 +95,14 @@ def read_rational_list_from_file(filename):
                     for elem in elements:
                         if elem not in ('+', '-', '*', '/'):
                             rational_list.append(to_rational(elem))
+                    sum_result = Rational(0, 1)
+                    for num in rational_list:
+                        sum_result += num
+                    print(f"Сума раціональних чисел у рядку: {sum_result} ({sum_result()})")
                 except RationalError as e:
                     print(f"RationalError, Рядок {line_number}: Помилка в елементі '{text}': {e}")
                 except RationalValueError as e:
                     print(f"RationalValueError, Рядок {line_number}: Помилка в елементі '{text}': {e}")
-            sum_result = Rational(0, 1)
-            for num in rational_list:
-                sum_result += num
-            print(f"Сума раціональних чисел у рядку: {sum_result} ({sum_result()})")
 
 
 if __name__ == '__main__':
